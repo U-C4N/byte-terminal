@@ -2,7 +2,7 @@
 
 Welcome to Byte Terminal - Umutcan Edizaslan's Coder's Playground!
 
-![Byte Terminal Screenshot](https://path-to-your-screenshot-image.png)
+![Byte Terminal Screenshot](Animation.gif)
 
 ## Overview
 
