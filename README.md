@@ -7,6 +7,7 @@ Welcome to Byte Terminal - Umutcan Edizaslan's Coder's Playground!
 ## Overview
 
 Byte Terminal is an interactive web-based chat interface that allows users to communicate with AI models using the Groq API. It provides a sleek, terminal-like experience with customizable features and local storage capabilities.
+You can try  [https://uc4n.com](https://uc4n.com)
 
 ## Features
 
