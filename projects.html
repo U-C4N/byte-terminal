@@ -1,0 +1,213 @@
+<html><head><base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uc4n - Byte Terminal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'mono': ['Fira Code', 'monospace'],
+                        'cyber': ['Orbitron', 'sans-serif'],
+                    },
+                    colors: {
+                        'terminal-green': '#00ff00',
+                        'terminal-black': '#0a0a0a',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        .blink {
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .rotate {
+            animation: rotate 60s linear infinite;
+        }
+    </style>
+</head>
+<body class="bg-terminal-black text-terminal-green font-mono min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl md:text-5xl font-cyber font-bold text-center text-terminal-green mb-10">Byte Terminal</h1>
+        
+        <div id="terminal-output" class="bg-gray-900 border border-terminal-green rounded p-4 mb-8 h-20 overflow-y-auto">
+            <p id="terminal-text" class="text-sm"></p>
+        </div>
+        
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+            <div class="bg-gray-900 border border-terminal-green rounded p-4">
+                <svg class="w-20 h-20 mx-auto mb-2 rotate" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <radialGradient id="marsGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                            <stop offset="0%" style="stop-color:rgb(255,100,50);stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:rgb(180,60,20);stop-opacity:1" />
+                        </radialGradient>
+                    </defs>
+                    <circle cx="100" cy="100" r="95" fill="url(#marsGradient)" />
+                    <path d="M30 100 Q 60 50, 100 70 T 170 100" fill="none" stroke="#8B4513" stroke-width="2"/>
+                    <path d="M40 130 Q 80 100, 120 110 T 160 130" fill="none" stroke="#8B4513" stroke-width="2"/>
+                    <circle cx="70" cy="60" r="15" fill="#B22222" />
+                    <circle cx="130" cy="40" r="10" fill="#8B0000" />
+                    <circle cx="160" cy="80" r="12" fill="#A52A2A" />
+                </svg>
+                <h3 class="text-center font-cyber text-terminal-green">Deuz AI</h3>
+                <p class="text-xs text-center mb-2">AGI Platform</p>
+                <div class="text-xs text-terminal-green text-center mb-1">$ ./launch_deuz_ai.sh</div>
+                <button class="w-full bg-terminal-green text-terminal-black text-xs font-bold py-1 px-2 rounded hover:bg-gray-300 transition duration-300 mb-2">Launch Deuz AI</button>
+                <div class="text-xs text-center mt-2 bg-gray-800 p-2 rounded h-48 overflow-y-auto">
+                    <p class="font-bold text-terminal-green">Monthly Recurring Revenue (MRR)</p>
+                    <p class="text-2xl font-cyber text-terminal-green">000,000</p>
+                    <p class="text-gray-400">↑ 15% from last month</p>
+                    <div class="my-2 border-t border-terminal-green opacity-30"></div>
+                    <p class="font-bold text-terminal-green">Annual Recurring Revenue (ARR)</p>
+                    <p class="text-2xl font-cyber text-terminal-green">000,000</p>
+                    <p class="text-gray-400">↑ 22% from last year</p>
+                    <div class="my-2 border-t border-terminal-green opacity-30"></div>
+                    <p class="text-xs text-left text-gray-300">
+                        Multi-LLM chatbot, Chrome extension, AI-driven translation services, advanced search capabilities, image enhancement tools like upscale and background removal, and cutting-edge voice cloning with TTS features. Additionally, Deuz A.I. integrates D-Coder technology and 15% AGI agents to solve complex problems, pushing the boundaries of what AI can achieve.
+                    </p>
+                </div>
+            </div>
+            <div class="bg-gray-900 border border-terminal-green rounded p-4">
+                <svg class="w-20 h-20 mx-auto mb-2 rotate" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <radialGradient id="jupiterGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                            <stop offset="0%" style="stop-color:rgb(255,220,180);stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:rgb(200,150,100);stop-opacity:1" />
+                        </radialGradient>
+                    </defs>
+                    <circle cx="100" cy="100" r="95" fill="url(#jupiterGradient)" />
+                    <ellipse cx="100" cy="100" rx="95" ry="30" fill="rgba(255,100,0,0.3)" transform="rotate(15)" />
+                    <ellipse cx="100" cy="100" rx="95" ry="20" fill="rgba(200,80,0,0.3)" transform="rotate(-10)" />
+                    <path d="M20,100 Q60,80 100,100 T180,100" fill="rgba(150,50,0,0.4)" />
+                    <circle cx="150" cy="60" r="20" fill="rgba(255,0,0,0.6)" />
+                    <circle cx="50" cy="140" r="15" fill="rgba(200,0,0,0.6)" />
+                </svg>
+                <h3 class="text-center font-cyber text-terminal-green">Tedixo AI</h3>
+                <p class="text-xs text-center mb-2">Web Vulnerability Scanning Platform</p>
+                <div class="text-xs text-terminal-green text-center mb-1">$ ./launch_tedixo_ai.sh</div>
+                <button class="w-full bg-terminal-green text-terminal-black text-xs font-bold py-1 px-2 rounded hover:bg-gray-300 transition duration-300 mb-2">Launch Tedixo AI</button>
+                <div class="text-xs text-center mt-2 bg-gray-800 p-2 rounded h-48 overflow-y-auto">
+                    <p class="font-bold text-terminal-green">Monthly Recurring Revenue (MRR)</p>
+                    <p class="text-2xl font-cyber text-terminal-green">000,000</p>
+                    <p class="text-gray-400">↑ 15% from last month</p>
+                    <div class="my-2 border-t border-terminal-green opacity-30"></div>
+                    <p class="font-bold text-terminal-green">Annual Recurring Revenue (ARR)</p>
+                    <p class="text-2xl font-cyber text-terminal-green">000,000</p>
+                    <p class="text-gray-400">↑ 22% from last year</p>
+                    <div class="my-2 border-t border-terminal-green opacity-30"></div>
+                    <p class="text-xs text-left text-gray-300">
+                        Web vulnerability scanning platform powered by the Deuz Agent system. Agents actively search for web vulnerabilities, providing multiple reports and engaging in discussions to ensure thorough analysis and resolution.
+                    </p>
+                </div>
+            </div>
+            <div class="bg-gray-900 border border-terminal-green rounded p-4">
+                <svg class="w-20 h-20 mx-auto mb-2 rotate" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <radialGradient id="saturnGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                            <stop offset="0%" style="stop-color:rgb(255,220,180);stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:rgb(200,170,120);stop-opacity:1" />
+                        </radialGradient>
+                    </defs>
+                    <circle cx="100" cy="100" r="70" fill="url(#saturnGradient)" />
+                    <ellipse cx="100" cy="100" rx="95" ry="3" fill="rgba(210,180,140,0.8)" transform="rotate(-20)" />
+                    <ellipse cx="100" cy="100" rx="90" ry="5" fill="rgba(180,150,110,0.6)" transform="rotate(-20)" />
+                    <ellipse cx="100" cy="100" rx="85" ry="7" fill="rgba(150,120,80,0.4)" transform="rotate(-20)" />
+                    <path d="M50,90 Q75,110 100,90 T150,90" fill="rgba(180,150,110,0.3)" transform="rotate(-20)" />
+                </svg>
+                <h3 class="text-center font-cyber text-terminal-green">Saturn Hope A.I</h3>
+                <p class="text-xs text-center mb-2">SERP Scraping & Web Crawling Tool</p>
+                <div class="text-xs text-terminal-green text-center mb-1">$ ./launch_saturn_hope.sh</div>
+                <button class="w-full bg-terminal-green text-terminal-black text-xs font-bold py-1 px-2 rounded hover:bg-gray-300 transition duration-300 mb-2">Launch Saturn Hope A.I</button>
+                <div class="text-xs text-center mt-2 bg-gray-800 p-2 rounded h-48 overflow-y-auto">
+                    <p class="font-bold text-terminal-green">Monthly Recurring Revenue (MRR)</p>
+                    <p class="text-2xl font-cyber text-terminal-green">000,000</p>
+                    <p class="text-gray-400">↑ 15% from last month</p>
+                    <div class="my-2 border-t border-terminal-green opacity-30"></div>
+                    <p class="font-bold text-terminal-green">Annual Recurring Revenue (ARR)</p>
+                    <p class="text-2xl font-cyber text-terminal-green">000,000</p>
+                    <p class="text-gray-400">↑ 22% from last year</p>
+                    <div class="my-2 border-t border-terminal-green opacity-30"></div>
+                    <p class="text-xs text-left text-gray-300">
+                        A real-time API service that enables users to scrape and access search engine result pages (SERPs) from platforms like Google and Bing, combined with an advanced web crawling tool that systematically browses and indexes website content, identifies structural issues, broken links, and SEO pitfalls to improve site performance and search engine rankings.
+                    </p>
+                </div>
+            </div>
+            <div class="bg-gray-900 border border-terminal-green rounded p-4">
+                <svg class="w-20 h-20 mx-auto mb-2 rotate" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <radialGradient id="conetyaGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                            <stop offset="0%" style="stop-color:rgb(100,200,255);stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:rgb(50,150,200);stop-opacity:1" />
+                        </radialGradient>
+                    </defs>
+                    <circle cx="100" cy="100" r="95" fill="url(#conetyaGradient)" />
+                    <path d="M20,100 Q60,60 100,100 T180,100" fill="rgba(255,255,255,0.2)" />
+                    <path d="M40,140 Q80,100 120,140 T160,140" fill="rgba(255,255,255,0.1)" />
+                    <circle cx="150" cy="50" r="10" fill="rgba(255,255,255,0.6)" />
+                    <circle cx="50" cy="150" r="8" fill="rgba(255,255,255,0.6)" />
+                    <circle cx="100" cy="80" r="25" fill="rgba(0,100,200,0.4)" />
+                </svg>
+                <h3 class="text-center font-cyber text-terminal-green">Conetya</h3>
+                <p class="text-xs text-center mb-2">AI Community Hub</p>
+                <div class="text-xs text-terminal-green text-center mb-1">$ ./launch_conetya.sh</div>
+                <button class="w-full bg-terminal-green text-terminal-black text-xs font-bold py-1 px-2 rounded hover:bg-gray-300 transition duration-300 mb-2">Launch Conetya</button>
+                <div class="text-xs text-center mt-2 bg-gray-800 p-2 rounded h-48 overflow-y-auto">
+                    <p class="font-bold text-terminal-green">Monthly Recurring Revenue (MRR)</p>
+                    <p class="text-2xl font-cyber text-terminal-green">000,000</p>
+                    <p class="text-gray-400">↑ 15% from last month</p>
+                    <div class="my-2 border-t border-terminal-green opacity-30"></div>
+                    <p class="font-bold text-terminal-green">Annual Recurring Revenue (ARR)</p>
+                    <p class="text-2xl font-cyber text-terminal-green">000,000</p>
+                    <p class="text-gray-400">↑ 22% from last year</p>
+                    <div class="my-2 border-t border-terminal-green opacity-30"></div>
+                    <p class="text-xs text-left text-gray-300">
+                        Conetya is a dynamic platform where AI enthusiasts can ask questions, receive guidance, take part in competitions, solve tests, offer private lessons, search for jobs, present projects, and attract investors. It's a hub for learning, collaboration, and innovation in the AI community.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Back button -->
+        <div class="text-center">
+            <button onclick="window.history.back()" class="bg-terminal-green text-terminal-black font-bold py-2 px-4 rounded hover:bg-gray-300 transition duration-300">
+                &lt; Back to Terminal
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Terminal-like typing effect
+        function typeWriter(elementId, text, speed = 10) {  // Changed speed to 10ms for faster typing
+            let i = 0;
+            const element = document.getElementById(elementId);
+            element.innerHTML = '';
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                } else {
+                    element.innerHTML += '<span class="blink">▮</span>';
+                }
+            }
+            type();
+        }
+
+        // Call the function when the page loads
+        window.onload = function() {
+            typeWriter("terminal-text", "Welcome to Byte Terminal. Initializing systems...\n\nByteOS Kernel 5.4.0-42-generic\n\n[OK] Reached target Graphical Interface.\n[OK] Started GNOME Display Manager.\n\nByte login: _");
+        };
+    </script>
+</body></html>
