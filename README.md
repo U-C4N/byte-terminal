@@ -22,6 +22,7 @@ You can try it at [https://uc4n.com](https://uc4n.com)
   - AI responses are displayed in white.
   - Text enclosed in double asterisks (`**like this**`) is displayed in blue and bold.
 - **PDF RAG**: Upload PDF documents (up to 15MB) and chat with their content using Retrieval-Augmented Generation.
+- **RAG History**: View a table of all uploaded PDF files with their details.
 
 ## Usage
 
@@ -47,6 +48,7 @@ You can try it at [https://uc4n.com](https://uc4n.com)
 - `/clear`: Clear the terminal
 - `/save`: Save the conversation history as JSON
 - `/upload`: Upload a PDF file for RAG functionality
+- `/historyofrag`: Display a table of uploaded PDF files with their details
 
 ### Chatting
 
@@ -58,6 +60,7 @@ Once you've set up your API key and model, simply type your message and press En
 2. Select a PDF file (up to 15MB) when prompted.
 3. Wait for the PDF to be processed. You'll see a confirmation message.
 4. Start asking questions about the PDF content. The AI will use the document information to provide more contextual and accurate answers.
+5. To view a history of all uploaded PDFs, use the `/historyofrag` command.
 
 **Note on Formatting**: If you want to emphasize part of your message, you can enclose it in double asterisks. For example, typing "This is **important**" will display "important" in blue and bold in the chat interface.
 
