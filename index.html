@@ -4,6 +4,7 @@
 <title>Uc4n - Byte Terminal</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=VT323&family=Fira+Code&display=swap');
 
@@ -295,6 +296,9 @@
             case '/save':
                 saveConversation();
                 break;
+            case '/upload':
+                uploadPDF();
+                break;
             default:
                 appendOutput('Unknown command. Type /help for a list of commands.');
         }
@@ -310,6 +314,7 @@ Available commands:
 /help - Display this help message
 /clear - Clear the terminal
 /save - Save the conversation history as JSON
+/upload - Upload a PDF file for RAG
         `;
         appendOutput(helpText);
     }
@@ -365,7 +370,7 @@ async function callGroqAPI(input) {
             },
             body: JSON.stringify({
                 model: model,
-                messages: [{role: 'user', content: input}]
+                messages: chatHistory // Tüm sohbet geçmişini gönderiyoruz
             })
         });
 
@@ -400,6 +405,42 @@ async function callGroqAPI(input) {
     }
     if (model) {
         appendOutput('Model loaded from browser storage.');
+    }
+
+    function uploadPDF() {
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.accept = '.pdf';
+        input.onchange = handleFileUpload;
+        input.click();
+    }
+
+    async function handleFileUpload(event) {
+        const file = event.target.files[0];
+        if (file && file.type === 'application/pdf' && file.size <= 15 * 1024 * 1024) {
+            appendOutput('PDF yükleniyor...');
+            const arrayBuffer = await file.arrayBuffer();
+            const pdfData = new Uint8Array(arrayBuffer);
+            processPDF(pdfData);
+        } else {
+            appendOutput('Lütfen 15 MB veya daha küçük bir PDF dosyası seçin.');
+        }
+    }
+
+    async function processPDF(pdfData) {
+        try {
+            const pdf = await pdfjsLib.getDocument({data: pdfData}).promise;
+            let text = '';
+            for (let i = 1; i <= pdf.numPages; i++) {
+                const page = await pdf.getPage(i);
+                const content = await page.getTextContent();
+                text += content.items.map(item => item.str).join(' ');
+            }
+            chatHistory.push({role: 'system', content: `Bu bir PDF dosyasından çıkarılan metindir: ${text}`});
+            appendOutput('PDF işlendi ve içerik sohbete eklendi.');
+        } catch (error) {
+            appendOutput(`PDF işleme hatası: ${error.message}`);
+        }
     }
 });
 </script>
