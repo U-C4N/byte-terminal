@@ -6,8 +6,8 @@ Welcome to Byte Terminal - Umutcan Edizaslan's Coder's Playground!
 
 ## Overview
 
-Byte Terminal is an interactive web-based chat interface that allows users to communicate with AI models using the Groq API. It provides a sleek, terminal-like experience with customizable features and local storage capabilities.
-You can try  [https://uc4n.com](https://uc4n.com)
+Byte Terminal is an interactive web-based chat interface that allows users to communicate with AI models using the Groq API. It provides a sleek, terminal-like experience with customizable features, local storage capabilities, and now includes Retrieval-Augmented Generation (RAG) functionality for PDF documents.
+You can try it at [https://uc4n.com](https://uc4n.com)
 
 ## Features
 
@@ -21,6 +21,7 @@ You can try  [https://uc4n.com](https://uc4n.com)
   - Model names are displayed in blue.
   - AI responses are displayed in white.
   - Text enclosed in double asterisks (`**like this**`) is displayed in blue and bold.
+- **PDF RAG**: Upload PDF documents (up to 15MB) and chat with their content using Retrieval-Augmented Generation.
 
 ## Usage
 
@@ -45,10 +46,18 @@ You can try  [https://uc4n.com](https://uc4n.com)
 - `/deletem`: Delete the stored model name
 - `/clear`: Clear the terminal
 - `/save`: Save the conversation history as JSON
+- `/upload`: Upload a PDF file for RAG functionality
 
 ### Chatting
 
 Once you've set up your API key and model, simply type your message and press Enter to chat with the AI. 
+
+### Using RAG with PDF Documents
+
+1. Type `/upload` in the terminal.
+2. Select a PDF file (up to 15MB) when prompted.
+3. Wait for the PDF to be processed. You'll see a confirmation message.
+4. Start asking questions about the PDF content. The AI will use the document information to provide more contextual and accurate answers.
 
 **Note on Formatting**: If you want to emphasize part of your message, you can enclose it in double asterisks. For example, typing "This is **important**" will display "important" in blue and bold in the chat interface.
 
@@ -67,7 +76,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Acknowledgments
 
 - Thanks to Groq for providing the AI API.
-
 - Special thanks to all contributors and users of Byte Terminal.
 
 ## Contact
