@@ -81,8 +81,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Thanks to Groq for providing the AI API.
 - Special thanks to all contributors and users of Byte Terminal.
 
-## Contact
+## Author
 
-Umutcan Edizaslan - @UEdizaslan
-
-Project Link: [https://github.com/U-C4N/byte-terminal](https://github.com/U-C4N/byte-terminal)
+<p align="left">
+<b>Umutcan Edizaslan:</b>
+<a href="https://github.com/U-C4N" target="blank"><img align="center" src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/Github-Dark.svg" alt="TutTrue" height="30" width="40" /></a>
+<a href="https://x.com/UEdizaslan" target="blank"><img align="center" src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/Twitter.svg" height="30" width="40" /></a>
+</p>
