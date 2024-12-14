@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&family=Fira+Code&display=swap');
+
+:root {
+    --bg-color: #0a0a0a;
+    --text-color: #00ff00;
+    --accent-color: #ff00ff;
+    --secondary-color: #0000ff;
+    --model-color: #0000ff;
+    --code-bg: #1e1e1e;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body, html {
+    height: 100%;
+    font-family: 'VT323', monospace;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    gap: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    text-align: center;
+    text-shadow: 0 0 10px var(--text-color);
+}
+
+p {
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
+.terminal {
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 2px solid var(--text-color);
+    border-radius: 5px;
+    padding: 1rem;
+    position: relative;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 300px;
+    max-height: 60vh;
+}
+
+nav {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.nav-link:hover {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+    border-radius: 4px;
+}
+
+.terminal::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 25px;
+    background: linear-gradient(to bottom, var(--text-color), transparent);
+    opacity: 0.1;
+}
+
+#output {
+    white-space: pre-wrap;
+    margin-bottom: 10px;
+}
+
+.input-line {
+    display: flex;
+    align-items: center;
+}
+
+.prompt { margin-right: 10px; }
+
+#input {
+    flex-grow: 1;
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+}
+
+.link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.link:hover {
+    color: var(--secondary-color);
+    text-shadow: 0 0 5px var(--secondary-color);
+}
+
+@keyframes glitch {
+    0%, 100% { text-shadow: -0.025em 0 0 var(--accent-color), -0.025em -0.025em 0 var(--secondary-color), -0.025em -0.05em 0 var(--text-color); }
+    25% { text-shadow: 0.025em 0.05em 0 var(--accent-color), 0.05em 0 0 var(--secondary-color), 0 -0.05em 0 var(--text-color); }
+    50% { text-shadow: -0.05em -0.025em 0 var(--accent-color), 0.025em 0.025em 0 var(--secondary-color), -0.05em -0.05em 0 var(--text-color); }
+    75% { text-shadow: 0.05em 0 0 var(--accent-color), -0.05em -0.025em 0 var(--secondary-color), -0.025em 0.05em 0 var(--text-color); }
+}
+
+.glitch { animation: glitch 1s infinite; }
+
+.model-name { color: var(--model-color); }
+.response-text { color: #ffffff; }
+
+.code-container {
+    margin: 10px 0;
+    background-color: var(--code-bg);
+    border-radius: 5px;
+    overflow: hidden;
+    font-family: 'Fira Code', monospace;
+}
+
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    background-color: rgba(255,255,255,0.1);
+}
+
+.code-language {
+    font-size: 0.8em;
+    color: #888;
+}
+
+.copy-btn {
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 2px;
+}
+
+.copy-btn:hover {
+    color: var(--accent-color);
+}
+
+.code-container pre {
+    margin: 0;
+    padding: 10px;
+}
+
+.execution-time {
+    font-size: 0.8em;
+    color: #888;
+    border-top: 1px solid #333;
+    margin-top: 5px;
+    padding-top: 5px;
+}
+
+.nav-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    fill: currentColor;
+} 
