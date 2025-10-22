@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umutcan Edizaslan - Kişisel Web Sitesi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        header h1 {
+            color: #667eea;
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header p {
+            font-size: 1.3rem;
+            color: #666;
+        }
+
+        .profile-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .profile-section h2 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        .profile-section p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .card ul li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .card ul li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .contact-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-section h2 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-weight: bold;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Umutcan Edizaslan</h1>
+            <p>Hoş Geldiniz</p>
+        </header>
+
+        <div class="profile-section">
+            <h2>Hakkımda</h2>
+            <p>
+                Merhaba, ben Umutcan Edizaslan. Bu web sitesi, benim hakkımda bilgi edinebileceğiniz
+                ve benimle iletişime geçebileceğiniz bir platformdur. Teknoloji, yenilikçi projeler ve
+                sürekli öğrenme konusunda tutkulu biriyim.
+            </p>
+            <p>
+                Kendimi geliştirmeye ve yeni beceriler kazanmaya her zaman açığım. Çalışmalarım ve
+                projelerim hakkında daha fazla bilgi edinmek için aşağıdaki bölümlere göz atabilirsiniz.
+            </p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <h3>Yetenekler</h3>
+                <ul>
+                    <li>Web Geliştirme</li>
+                    <li>Yazılım Mühendisliği</li>
+                    <li>Problem Çözme</li>
+                    <li>Takım Çalışması</li>
+                    <li>Proje Yönetimi</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>İlgi Alanları</h3>
+                <ul>
+                    <li>Yazılım Geliştirme</li>
+                    <li>Yeni Teknolojiler</li>
+                    <li>İnovasyon</li>
+                    <li>Sürekli Öğrenme</li>
+                    <li>Dijital Dönüşüm</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Hedefler</h3>
+                <ul>
+                    <li>Sürekli Gelişim</li>
+                    <li>Yenilikçi Projeler</li>
+                    <li>Topluma Katkı</li>
+                    <li>Profesyonel Başarı</li>
+                    <li>Ekip Liderliği</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <h2>İletişim</h2>
+            <p>Benimle iletişime geçmek için aşağıdaki bağlantıları kullanabilirsiniz:</p>
+            <div class="social-links">
+                <a href="mailto:umutcanedizaslan@example.com">E-posta</a>
+                <a href="#" target="_blank">LinkedIn</a>
+                <a href="#" target="_blank">GitHub</a>
+                <a href="#" target="_blank">Twitter</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Umutcan Edizaslan. Tüm hakları saklıdır.</p>
+        </footer>
+    </div>
+</body>
+</html>
